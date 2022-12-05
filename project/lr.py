@@ -96,7 +96,7 @@ def parse_data(input_data):
     else:
         aasthma = 9
 
-    model(
+    result = model(
         [
             [
                 phy_health,
@@ -115,6 +115,8 @@ def parse_data(input_data):
             ]
         ]
     )
+    print(result)
+    return result
 
 
 def model(user_data):
@@ -141,11 +143,12 @@ def model(user_data):
     # print(samp)
     # print(samp1)
     # print(samp.item(0))
-    return result(samp.item(0))
+    res = result(samp.item(0))
+    return res
 
 
 def result(val):
     if val * 100 > 9:
-        return("unwell")
+        return "unwell"
     else:
-        return("well")
+        return "well"
