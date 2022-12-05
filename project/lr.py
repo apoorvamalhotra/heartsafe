@@ -141,7 +141,7 @@ def model(user_data):
     # print(samp)
     # print(samp1)
     # print(samp.item(0))
-    result(samp.item(0))
+    return result(samp.item(0))
 
 
 def result(val):

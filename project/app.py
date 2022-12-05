@@ -46,6 +46,7 @@ def webhook():
             elif i['field']['id']=='l9W1Q0ebw3Qu':
                 input_data['Depression'] = i['boolean']
         result = lr.parse_data(input_data)
+        print(result)
         return result, 200
     else:
         abort(400)
