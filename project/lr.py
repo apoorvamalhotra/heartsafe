@@ -18,23 +18,23 @@ def parse_data(input_data):
     # elif missing:
     #     phy_health=9
 
-    if input_data["Mentalhealth"] == 0:
+    if input_data["MentalHealth"] == 0:
         men_health = 1
-    elif input_data["Mentalhealth"] >= 1 and input_data["Mentalhealth"] <= 13:
+    elif input_data["MentalHealth"] >= 1 and input_data["MentalHealth"] <= 13:
         men_health = 2
     else:
         men_health = 3
     # elif missing:
     #     phy_health=9
 
-    if input_data["PhysicalActivity"] == "Y":
+    if input_data["PhysicalActivity"] == True:
         phy_activity = 1
-    elif input_data["PhysicalActivity"] == "N":
+    elif input_data["PhysicalActivity"] == False:
         phy_activity = 2
     else:
         phy_activity = 9
 
-    if input_data["Sex"] == "M":
+    if input_data["Sex"] == "Male":
         sex = 1
     else:
         sex = 2
@@ -61,37 +61,37 @@ def parse_data(input_data):
     else:
         bmi = 4
 
-    if input_data["SmokingStatus"] == "Y":
+    if input_data["SmokingStatus"] == True:
         smoke = 2
-    elif input_data["SmokingStatus"] == "N":
+    elif input_data["SmokingStatus"] == False:
         smoke = 1
     else:
         smoke = 9
 
-    if input_data["Depression"] == "Y":
+    if input_data["Depression"] == True:
         depression = 1
-    elif input_data["Depression"] == "N":
+    elif input_data["Depression"] == False:
         depression = 2
     else:
         depression = 7
 
-    if input_data["DifficultyWalking"] == "Y":
+    if input_data["DifficultyWalking"] == True:
         walk = 1
-    elif input_data["DifficultyWalking"] == "N":
+    elif input_data["DifficultyWalking"] == False:
         walk = 2
     else:
         walk = 7
 
-    if input_data["DiabetesHistory"] == "Y":
+    if input_data["DiabetesHistory"] == True:
         diabetes = 1
-    elif input_data["DiabetesHistory"] == "N":
+    elif input_data["DiabetesHistory"] == False:
         diabetes = 3
     else:
         diabetes = 7
 
-    if input_data["AsthmaHistory"] == "Y":
+    if input_data["AsthmaHistory"] == True:
         aasthma = 2
-    elif input_data["AsthmaHistory"] == "N":
+    elif input_data["AsthmaHistory"] == False:
         aasthma = 1
     else:
         aasthma = 9
@@ -146,6 +146,6 @@ def model(user_data):
 
 def result(val):
     if val * 100 > 9:
-        print("unwell")
+        return("unwell")
     else:
-        print("well")
+        return("well")
