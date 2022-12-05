@@ -6,6 +6,9 @@ from project import lr
 
 app = Flask(__name__)
 
+@app.route("/", methods=["GET"])
+def homepage():
+    print("Welcome to HeartSafe")
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
